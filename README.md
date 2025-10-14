@@ -23,3 +23,10 @@ The credentials are stored in the .env file (which is not committed to the repo)
 To ensure that any IP can access the database, Atlas is configured to allow access from any IP address via the Network Access tab on the Atlas dashboard.
 
 The file for connecting to the database is stored under the `lib` folder. This is where the package `mongoose` is used to interact with the database. Mongoose provides a straight-forward, schema-based solution to model application data.
+
+# The API
+Everything backend will be in the api folder. The `videogame` folder will be an API once we have the route.ts file, the name cannot be changed.
+
+If we have a folder with parentheses (auth) this will be ignored in the URL on the backend and frontend.
+
+If we have a folder with square brackets `[category]` this will be dynamic.
