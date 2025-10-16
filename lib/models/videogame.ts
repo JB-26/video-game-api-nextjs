@@ -13,7 +13,8 @@ const VideogameSchema = new Schema(
 );
 
 // check if the model exists before creating one
-const Videogame = models.Videogame || model("videogame", VideogameSchema);
+// fun fact: mongoose is case sensitive, so we need to use the same casing as the model name. Otherwise it will try to overwrite the existing model.
+const Videogame = models.Videogame || model("Videogame", VideogameSchema);
 
 // exported so it can be used in other files
 export default Videogame;
