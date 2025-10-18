@@ -98,3 +98,51 @@ export const PATCH = async (request: Request) => {
     });
   }
 };
+
+export const DELETE = async (request: Request) => {
+  try {
+    // destructuring
+    const { searchParams } = new URL(request.url);
+    const gameId = searchParams.get("gameId");
+
+    if (!gameId) {
+      return new NextResponse(JSON.stringify({ message: `Game not found` }), {
+        status: 404,
+      });
+    }
+
+    if (!Types.ObjectId.isValid(gameId)) {
+      return new NextResponse(JSON.stringify({ message: `Invalid ID` }), {
+        status: 400,
+      });
+    }
+
+    // connect to db
+    await connect();
+
+    // delete game
+    const deletedGame = await Videogame.findByIdAndDelete(
+      new Types.ObjectId(gameId),
+    );
+
+    // check if the game exists
+    if (!deletedGame) {
+      return new NextResponse(JSON.stringify({ message: "Game not found" }), {
+        status: 404,
+      });
+    }
+
+    // return response
+    return new NextResponse(
+      JSON.stringify({
+        message: "Game deleted successfully",
+        game: deletedGame,
+      }),
+      { status: 200 },
+    );
+  } catch (error) {
+    return new NextResponse(`Error in deleting video game - ${error}`, {
+      status: 500,
+    });
+  }
+};

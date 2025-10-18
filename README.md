@@ -30,3 +30,20 @@ Everything backend will be in the api folder. The `videogame` folder will be an 
 If we have a folder with parentheses (auth) this will be ignored in the URL on the backend and frontend.
 
 If we have a folder with square brackets `[category]` this will be dynamic.
+
+# Styling
+Tailwind CSS is a popular CSS framework.
+`global.css` is reserved for styles that are truly global. If styling a page or a component, then a CSS module is recommended.
+A CSS Module is a file that is scoped to a component/page, it can prevent styles from clashing.
+
+# Tailwind CSS
+A popular CSS framework, that uses the concept of utility classes.
+When you build your application, our final CSS bundle will only have the utility classes that have been used in the markup.
+
+# Daisy UI
+A popular component library for Tailwind CSS. Think of it as Bootstrap for Tailwind CSS.
+*Note* As we are using turbopack, we need to add the following to the `package.json` file:
+```
+npm pkg set browserslist="> 1%"
+```
+The lightning CSS config can modify some styles, the command above will tell lightning CSS to target modern browsers instead of polyfilling styles for outdated browsers.
