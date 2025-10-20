@@ -20,7 +20,7 @@ export default function Home() {
               <li>TailwindCSS</li>
               <li>DaisyUI</li>
             </ul>
-            <p>
+            <p className="py-6">
               Looking for the GitHub repo? Check out the{" "}
               <Link
                 href="https://github.com/JB-26/video-game-api-nextjs"
@@ -31,7 +31,7 @@ export default function Home() {
                 link here!
               </Link>
             </p>
-            <div role="alert" className="alert alert-warning">
+            <div role="alert" className="alert alert-warning py-2 text-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 shrink-0 stroke-current"
@@ -39,19 +39,26 @@ export default function Home() {
                 viewBox="0 0 24 24"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                 />
               </svg>
               <span>
                 Warning: <strong>Do not enter any personal information!</strong>{" "}
-                This is a public API. Please use this API responsibly. Do not
-                use this API for any illegal or unethical purposes. This is
-                designed to demonstrate my skills.
+                <br />
+                This is a public API. Please use this API responsibly.
+                <br />
+                Do not use this API for any illegal or unethical purposes.
+                <br />
+                This is designed to demonstrate my skills.
               </span>
             </div>
+            <h2 className="text-2xl font-bold py-4">API Documentation</h2>
+            <h3 className="text-xl font-bold">Endpoints</h3>
+            <h4 className="text-lg font-bold">GET games</h4>
+            <p>Retrieves a list of all games in the database.</p>
           </div>
         </div>
       </div>

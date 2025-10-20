@@ -25,11 +25,11 @@ To ensure that any IP can access the database, Atlas is configured to allow acce
 The file for connecting to the database is stored under the `lib` folder. This is where the package `mongoose` is used to interact with the database. Mongoose provides a straight-forward, schema-based solution to model application data.
 
 # The API
-Everything backend will be in the api folder. The `videogame` folder will be an API once we have the route.ts file, the name cannot be changed.
+Everything backend will be in the api folder. The `videogame` folder will be an API once we have the `route.ts` file, the name cannot be changed.
 
-If we have a folder with parentheses (auth) this will be ignored in the URL on the backend and frontend.
+If we have a folder with parentheses, `(auth)`, this will be ignored in the URL on the backend and frontend.
 
-If we have a folder with square brackets `[category]` this will be dynamic.
+If we have a folder with square brackets, `[category]`, this will be dynamic.
 
 # Styling
 Tailwind CSS is a popular CSS framework.
