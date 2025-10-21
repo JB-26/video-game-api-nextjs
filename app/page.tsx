@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "./components/Footer/footer";
 
 export default function Home() {
   return (
@@ -62,21 +63,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-        <aside>
-          <p>
-            Created by{" "}
-            <Link
-              href="https://www.joshblewitt.dev/"
-              className="link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Joshua Blewitt
-            </Link>
-          </p>
-        </aside>
-      </footer>
+      <Footer />
     </div>
   );
 }
