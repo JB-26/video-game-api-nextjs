@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Footer from "./components/Footer/footer";
+import Header from "./components/Header/header";
 
 export default function Home() {
   return (
     <div data-theme="lofi" className="min-h-screen flex flex-col">
+      <Header />
       <div className="hero bg-base-200 flex-1">
         <div className="hero-content text-center">
           <div className="max-w-md">
@@ -32,20 +34,15 @@ export default function Home() {
                 link here!
               </Link>
             </p>
-            <div role="alert" className="alert alert-warning py-2 text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
+            <p>
+              The GitHub repo also has a JSON Postman collection, which can be
+              used to send requests to the API. There are some example requests
+              below.
+            </p>
+            <div
+              role="alert"
+              className="alert alert-warning py-3 text-center text-xl"
+            >
               <span>
                 Warning: <strong>Do not enter any personal information!</strong>{" "}
                 <br />
@@ -58,8 +55,62 @@ export default function Home() {
             </div>
             <h2 className="text-2xl font-bold py-4">API Documentation</h2>
             <h3 className="text-xl font-bold">Endpoints</h3>
-            <h4 className="text-lg font-bold">GET games</h4>
+            <h4 className="text-lg font-bold p-3">GET</h4>
             <p>Retrieves a list of all games in the database.</p>
+            <p>Example request</p>
+            <div className="mockup-code w-full">
+              <pre data-prefix="$">
+                <code>
+                  curl --location
+                  &apos;http://localhost:3000/api/videogame&apos;
+                </code>
+              </pre>
+            </div>
+            <h4 className="text-lg font-bold p-3">POST</h4>
+            <p>Creates a new video game in the database.</p>
+            <p>Example request:</p>
+            <div className="mockup-code w-full">
+              <pre data-prefix="$">
+                <code>
+                  {`curl --location 'http://localhost:3000/api/videogame' \\
+            --header 'Content-Type: application/json' \\
+            --data '{
+                "title": "Teleroboxer",
+                "platform": "Virtual Boy",
+                "developer": "Nintendo",
+                "releaseDate": "1995-07-21"
+            }'`}
+                </code>
+              </pre>
+            </div>
+            <h4 className="text-lg font-bold p-3">PATCH</h4>
+            <p>Updates an existing video game in the database.</p>
+            <p>Example request:</p>
+            <div className="mockup-code w-full">
+              <pre data-prefix="$">
+                <code>
+                  {`curl --location --request PATCH 'http://localhost:3000/api/videogame' \
+                  --header 'Content-Type: application/json' \
+                  --data '{
+                      "id": "68f132db91b7c422b855f547",
+                      "newTitle": "Super Smash Bros. Melee",
+                      "newPlatform": "GameCube",
+                      "newDeveloper": "Nintendo",
+                      "newReleaseDate": "2001-11-21"
+                  }'`}
+                </code>
+              </pre>
+            </div>
+            <h4 className="text-lg font-bold p-3">DELETE</h4>
+            <p>Deletes a video game from the database.</p>
+            <p>Example request</p>
+            <div className="mockup-code w-full">
+              <pre data-prefix="$">
+                <code>
+                  {`curl --location --request DELETE 'http://localhost:3000/api/videogame?gameId=68f3618fe2a8856bd22843ad'`}
+                </code>
+              </pre>
+            </div>
           </div>
         </div>
       </div>
