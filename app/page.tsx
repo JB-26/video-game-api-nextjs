@@ -24,15 +24,17 @@ export default function Home() {
               <li>DaisyUI</li>
             </ul>
             <p className="py-6">
-              Looking for the GitHub repo? Check out the{" "}
-              <Link
-                href="https://github.com/JB-26/video-game-api-nextjs"
-                className="link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                link here!
-              </Link>
+              Looking for the GitHub repo? Check out the link below!
+              <button className="bg-base-100 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+                <Link
+                  href="https://github.com/JB-26/video-game-api-nextjs"
+                  className="link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  GitHub Repository
+                </Link>
+              </button>
             </p>
             <p>
               The GitHub repo also has a JSON Postman collection, which can be
