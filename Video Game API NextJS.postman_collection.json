@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "fa26f2e8-c8fd-44c2-a87d-5f25254b4494",
+		"name": "Video Game API NextJS",
+		"description": "Welcome to this Postman collection that is designed to work with this project.\n\nHere you'll find a handful of requests that you can send to the API locally (on your machine if you're running it), or to where it's hosted (Vercel).\n\nThere are two variables included in this collection:\n\n- `environmentLocal`\n    \n    - This will send requests to `localhost`\n        \n- `environmentVercel`\n    \n    - This will send requests to Vercel, where this project is hosted\n        \n\nWarning: **Do not enter any personal information!**  \nThis is a public API. Please use this API responsibly.  \nDo not use this API for any illegal or unethical purposes.  \nThis is designed to demonstrate my skills.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9868963"
+	},
+	"item": [
+		{
+			"name": "Get Video Games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{environmentVercel}}/api/videogame",
+					"host": [
+						"{{environmentVercel}}"
+					],
+					"path": [
+						"api",
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add video game - wrong",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Wave Race 642222\",\n    \"platform\": \"Nintendo 64222\",\n    \"developer\": \"Nintendoooo\",\n    \"releaseDate\": \"1996-09-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{environmentVercel}}/api/videogame",
+					"host": [
+						"{{environmentVercel}}"
+					],
+					"path": [
+						"api",
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add video game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Teleroboxer\",\n    \"platform\": \"Virtual Boy\",\n    \"developer\": \"Nintendo\",\n    \"releaseDate\": \"1995-07-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{environmentVercel}}/api/videogame",
+					"host": [
+						"{{environmentVercel}}"
+					],
+					"path": [
+						"api",
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update game",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"68f132db91b7c422b855f547\",\n    \"newTitle\": \"Super Smash Bros. Melee\",\n    \"newPlatform\": \"GameCube\",\n    \"newDeveloper\": \"Nintendo\",\n    \"newReleaseDate\": \"2001-11-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{environmentVercel}}/api/videogame",
+					"host": [
+						"{{environmentVercel}}"
+					],
+					"path": [
+						"api",
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete game",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{environmentVercel}}/api/videogame?gameId=68f3618fe2a8856bd22843ad",
+					"host": [
+						"{{environmentVercel}}"
+					],
+					"path": [
+						"api",
+						"videogame"
+					],
+					"query": [
+						{
+							"key": "gameId",
+							"value": "68f3618fe2a8856bd22843ad"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "environmentLocal",
+			"value": ""
+		},
+		{
+			"key": "environmentVercel",
+			"value": ""
+		}
+	]
+}
