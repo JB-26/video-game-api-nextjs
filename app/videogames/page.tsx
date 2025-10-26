@@ -1,5 +1,7 @@
 import Footer from "../components/Footer/footer";
 import Header from "../components/Header/header";
+import connect from "@/lib/db";
+import Videogame from "@/lib/models/videogame";
 
 interface VideoGame {
   id: number;
@@ -10,13 +12,13 @@ interface VideoGame {
 }
 
 const VideoGame = async () => {
-  const res = await fetch("http://localhost:3000/api/videogame", {
-    // if you have data that changes frequently, use 'no-store'
-    cache: "no-store",
-  });
-  // annotate to be an array of users
-  const videoGames: VideoGame[] = await res.json();
-  console.log(videoGames);
+  // connect to the db
+  await connect();
+  // get all video games from the database
+  const videoGamesResponse = await Videogame.find();
+  const vgjson = JSON.stringify(videoGamesResponse);
+  const videoGamesArray = JSON.parse(vgjson);
+  console.log(videoGamesArray);
   return (
     <div data-theme="lofi" className="min-h-screen flex flex-col">
       <Header />
@@ -42,7 +44,7 @@ const VideoGame = async () => {
                 </tr>
               </thead>
               <tbody>
-                {videoGames.map((game) => (
+                {videoGamesArray.map((game: VideoGame) => (
                   <tr key={game.id}>
                     <td>{game.title}</td>
                     <td>{game.platform}</td>
