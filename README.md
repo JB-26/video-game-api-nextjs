@@ -10,6 +10,14 @@ Welcome to the Video Game API! This is a personal project to learn and demonstra
 - MongoDB
 - Mongoose
 
+# Note
+**Warning: Do not enter any personal information!**
+
+This is a public API. Please use this API responsibly.
+
+Do not use this API for any illegal or unethical purposes.
+
+This is designed to demonstrate my skills and is an ongoing project.
 
 # MongoDB
 This is being used to store and retrieve data for the API, and it being hosted on MongoDB Atlas.
