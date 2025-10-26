@@ -3,6 +3,10 @@ import Header from "../components/Header/header";
 import connect from "@/lib/db";
 import Videogame from "@/lib/models/videogame";
 
+// disable caching
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 interface VideoGame {
   id: number;
   title: string;
@@ -15,10 +19,9 @@ const VideoGame = async () => {
   // connect to the db
   await connect();
   // get all video games from the database
-  const videoGamesResponse = await Videogame.find();
-  const vgjson = JSON.stringify(videoGamesResponse);
-  const videoGamesArray = JSON.parse(vgjson);
-  console.log(videoGamesArray);
+  //.lean() returns plain JavaScript objects instead of Mongoose documents
+  const videoGames = await Videogame.find().lean();
+  console.log(videoGames);
   return (
     <div data-theme="lofi" className="min-h-screen flex flex-col">
       <Header />
@@ -44,7 +47,7 @@ const VideoGame = async () => {
                 </tr>
               </thead>
               <tbody>
-                {videoGamesArray.map((game: VideoGame) => (
+                {videoGames.map((game) => (
                   <tr key={game.id}>
                     <td>{game.title}</td>
                     <td>{game.platform}</td>
