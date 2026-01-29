@@ -48,12 +48,30 @@ const AddGame = () => {
       <Header />
       <main className="flex flex-col justify-center items-center">
         <h1 className="flex text-5xl font-bold">Add Game</h1>
-        <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+        <p className="text-xl m-3">
+          Fill out the form below and add a new game to the database!
+        </p>
+        <div
+          role="alert"
+          className="alert alert-warning py-3 text-center text-xl m-3"
+        >
+          <span>
+            Warning: <strong>Do not enter any personal information!</strong>{" "}
+            <br />
+            This is a public API. Please use this API responsibly.
+            <br />
+            Do not use this API for any illegal or unethical purposes.
+            <br />
+            This is designed to demonstrate my skills.
+          </span>
+        </div>
+        <form className="flex flex-col gap-2 m-2" onSubmit={handleSubmit}>
           <input
             className="bg-base-300"
             type="text"
             placeholder="Game Name"
             value={formData.title}
+            required
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
@@ -63,6 +81,7 @@ const AddGame = () => {
             type="text"
             placeholder="Game Platform"
             value={formData.platform}
+            required
             onChange={(e) =>
               setFormData({ ...formData, platform: e.target.value })
             }
@@ -72,6 +91,7 @@ const AddGame = () => {
             type="text"
             placeholder="Game Developer"
             value={formData.developer}
+            required
             onChange={(e) =>
               setFormData({ ...formData, developer: e.target.value })
             }
@@ -81,6 +101,7 @@ const AddGame = () => {
             type="date"
             placeholder="Game Release Date"
             value={formData.releaseDate}
+            required
             onChange={(e) =>
               setFormData({ ...formData, releaseDate: e.target.value })
             }
