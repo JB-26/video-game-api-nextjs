@@ -85,6 +85,10 @@ export default function Home() {
                 </code>
               </pre>
             </div>
+            <p>
+              Or, you can add a new video game on the{" "}
+              <Link href="/addGame">Add Game</Link> page.
+            </p>
             <h4 className="text-lg font-bold p-3">PATCH</h4>
             <p>Updates an existing video game in the database.</p>
             <p>Example request:</p>

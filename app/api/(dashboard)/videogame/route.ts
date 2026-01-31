@@ -11,9 +11,10 @@ export const GET = async () => {
     const videogames = await Videogame.find();
     return new NextResponse(JSON.stringify(videogames), { status: 200 });
   } catch (error) {
-    return new NextResponse(`Error in retrieving video games - ${error}`, {
-      status: 500,
-    });
+    return new NextResponse(
+      JSON.stringify({ message: `Error in creating video game - ${error}` }),
+      { status: 500 },
+    );
   }
 };
 
@@ -21,6 +22,10 @@ export const POST = async (request: Request) => {
   try {
     // get value from body of request
     const body = await request.json();
+
+    if (body.releaseDate) {
+      body.releaseDate = new Date(body.releaseDate);
+    }
     // connect to the db
     await connect();
     // create new video game
@@ -36,9 +41,10 @@ export const POST = async (request: Request) => {
       { status: 201 },
     );
   } catch (error) {
-    return new NextResponse(`Error in creating video game - ${error}`, {
-      status: 500,
-    });
+    return new NextResponse(
+      JSON.stringify({ message: `Error in creating video game - ${error}` }),
+      { status: 500 },
+    );
   }
 };
 
@@ -93,9 +99,10 @@ export const PATCH = async (request: Request) => {
       }),
     );
   } catch (error) {
-    return new NextResponse(`Error in updating video game - ${error}`, {
-      status: 500,
-    });
+    return new NextResponse(
+      JSON.stringify({ message: `Error in creating video game - ${error}` }),
+      { status: 500 },
+    );
   }
 };
 
@@ -141,8 +148,9 @@ export const DELETE = async (request: Request) => {
       { status: 200 },
     );
   } catch (error) {
-    return new NextResponse(`Error in deleting video game - ${error}`, {
-      status: 500,
-    });
+    return new NextResponse(
+      JSON.stringify({ message: `Error in creating video game - ${error}` }),
+      { status: 500 },
+    );
   }
 };
