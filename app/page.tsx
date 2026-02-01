@@ -117,6 +117,10 @@ export default function Home() {
                 </code>
               </pre>
             </div>
+            <p>
+              Or, you can delete a video game on the{" "}
+              <Link href="/deleteGame">Delete Game</Link> page.
+            </p>
           </div>
         </div>
       </div>

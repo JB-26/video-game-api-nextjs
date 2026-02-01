@@ -4,6 +4,13 @@ const Header = () => {
   return (
     <div>
       <ul className="menu menu-horizontal bg-base-200 rounded-box flex justify-center w-full text-xl">
+      <li>
+          <a>
+            <Link href="/deleteGame" rel="noopener noreferrer">
+              Delete game
+            </Link>
+          </a>
+        </li>
         <li>
           <a>
             <Link href="/addGame" rel="noopener noreferrer">
