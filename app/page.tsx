@@ -68,6 +68,10 @@ export default function Home() {
                 </code>
               </pre>
             </div>
+            <p>
+              Or, you can view all video games on the{" "}
+              <Link href="/videogames">Video Games</Link> page.
+            </p>
             <h4 className="text-lg font-bold p-3">POST</h4>
             <p>Creates a new video game in the database.</p>
             <p>Example request:</p>
@@ -107,6 +111,10 @@ export default function Home() {
                 </code>
               </pre>
             </div>
+            <p>
+              Or, you can update a video game on the{" "}
+              <Link href="/updateGame">Update Game</Link> page.
+            </p>
             <h4 className="text-lg font-bold p-3">DELETE</h4>
             <p>Deletes a video game from the database.</p>
             <p>Example request</p>
